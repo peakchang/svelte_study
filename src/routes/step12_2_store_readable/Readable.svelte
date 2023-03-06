@@ -3,8 +3,11 @@
 
     console.log(user);
     console.log($user);
+    const readUser = () => {
+        console.log($user);
+    }
 </script>
 
-<button>Click</button>
+<button on:click={readUser}>Click</button>
 
 <h2>{$user.name}</h2>

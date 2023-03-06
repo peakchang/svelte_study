@@ -1,13 +1,16 @@
 <script>
+    import { fruits } from "./fruits";
     let value;
 </script>
 
-<input bind:value>
+<input bind:value />
 
-<button>
-    Add fruits!
-</button>
+<button on:click={fruits.setItem(value)}> Add fruits! </button>
 
-<button>
-    Log fruit list
-</button>
+<button on:click={() => console.log(fruits.getList())}> Log fruit list </button>
+
+<ul>
+    {#each $fruits as { id, name } (id)}
+        <li>{name}</li>
+    {/each}
+</ul>
